@@ -43,7 +43,7 @@ export default function Experience() {
                      order-1 md:order-2 h-64 sm:h-80 md:h-96 flex items-center justify-center"
         >
           <Image
-            src="/solutif.png"
+            src="/Solutif.png"
             alt="Solutif"
             width={400}
             height={300}
