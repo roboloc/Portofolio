@@ -1,14 +1,17 @@
 import Image from "next/image";
 export default function Hero() {
   return (
-    <main className="min-h-screen bg-cyan-50 flex items-center justify-center py-10 px-4">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <main
+      id="hero"
+      className="bg-cyan-50 flex flex-col items-center justify-center py-16 px-4 sm:px-6"
+    >
+      <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* Text Section */}
         <div className="flex flex-col justify-center text-center md:text-left order-2 md:order-1">
-          <p className="font-bebas-neue text-4xl sm:text-5xl lg:text-7xl font-extrabold text-black leading-tight drop-shadow-md mb-2">
-            <span>I&apos;m Rafif Krishna Ismail</span>
+          <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-800 leading-tight">
+            I'm Rafif Krishna Ismail
           </p>
-
-          <p className="font-bebas-neue text-2xl sm:text-3xl lg:text-5xl font-semibold text-black leading-tight drop-shadow-sm mt-2 md:ml-20">
+          <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-cyan-700 mt-2">
             Software Engineer
           </p>
         </div>

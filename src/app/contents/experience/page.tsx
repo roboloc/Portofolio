@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 export default function Experience() {
@@ -12,10 +13,10 @@ export default function Experience() {
 
       <hr className="w-40 h-1 mx-auto my-4 bg-gray-700 border-0 rounded-sm"></hr>
 
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-2 items-center mt-12">
+      <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
         <div
-          className="w-full max-w-lg mx-auto  bg-[#FFFDF6] 
-                     rounded-3xl shadow-lg p-6 sm:p-8 flex flex-col justify-center text-center md:text-left
+          className="w-full max-w-lg mx-auto  bg-cyan-100
+                     rounded-3xl shadow-lg p-6 sm:p-8 flex flex-col justify-center text-left
                      order-2 md:order-1 min-h-[40vh]"
         >
           <p className="font-bebas-neue text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
@@ -38,7 +39,7 @@ export default function Experience() {
         </div>
 
         <div
-          className="relative w-full max-w-lg mx-auto bg-[#FAF6E9]
+          className="relative w-full max-w-lg mx-auto bg-white
                      rounded-3xl shadow-lg overflow-hidden
                      order-1 md:order-2 h-64 sm:h-80 md:h-96 flex items-center justify-center"
         >
@@ -52,10 +53,10 @@ export default function Experience() {
         </div>
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-2 items-center mt-12">
+      <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
         <div
-          className="w-full max-w-lg mx-auto  bg-[#FFFDF6] 
-                     rounded-3xl shadow-lg p-6 sm:p-8 flex flex-col justify-center text-center md:text-left
+          className="w-full max-w-lg mx-auto bg-cyan-100
+                     rounded-3xl shadow-lg p-6 sm:p-8 flex flex-col justify-center text-left
                      order-2 md:order-1 min-h-[40vh]"
         >
           <p className="font-bebas-neue text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
@@ -78,7 +79,7 @@ export default function Experience() {
           </ul>
         </div>
         <div
-          className="relative w-full max-w-lg mx-auto bg-[#FAF6E9]
+          className="relative w-full max-w-lg mx-auto 
                      rounded-3xl shadow-lg overflow-hidden
                      order-1 md:order-2 h-64 sm:h-80 md:h-96 flex items-center justify-center"
         >

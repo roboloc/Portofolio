@@ -11,26 +11,26 @@ export default function AboutMe() {
   return (
     <main
       id="about-me"
-      className="min-h-screen bg-[#FFFDF6] flex items-center justify-center py-10 px-4 "
+      className="bg-[#FFFDF6] flex items-center justify-center py-16 px-4 sm:px-6"
     >
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div
-          className=" bg-cyan-50 border border-cyan-100 rounded-xl shadow-lg p-6 md:p-10 flex flex-col justify-center
-                     order-2 md:order-1 min-h-[50vh] md:min-h-[60vh]"
+          className="bg-cyan-50 border border-cyan-100 rounded-xl shadow-lg p-6 md:p-10 flex flex-col justify-center
+                     order-2 md:order-1"
         >
           <p className="font-bold font-bebas-neue text-4xl sm:text-5xl lg:text-6xl text-black mb-6">
             About Me
           </p>
           <p className="text-black text-base sm:text-lg lg:text-xl leading-relaxed max-w-prose mb-6">
-            A resilient and strong-willed individual who is strongly interested
-            in machine learning and deep learning. A Computer Science graduate
-            with a GPA of 3.44 and practical experience as an intern for testing
-            applications. Good technical skills, such as problem-solving and
-            programming skills.
+            A Master's student in Computer Science with strong skills in
+            programming for web development using React and Express.js. Also,
+            strong skills in programming for machine learning. Work as a Quality
+            Assurance with manual testing and automated testing for an
+            internship. With an eagerness to learn new things, always delivers
+            the best, and possesses good teamwork skills.
           </p>
 
           <div className="mt-6 flex space-x-4">
-            {" "}
             <span
               className="w-10 h-10 rounded-full border-2 border-black inline-flex items-center justify-center
                          bg-amber-300 relative overflow-hidden flex-shrink-0 shadow-md transform transition-transform duration-200 hover:scale-105"
