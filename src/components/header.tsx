@@ -2,37 +2,49 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="bg-cyan-50 shadow-sm p-4 w-full sticky top-0 z-50">
-      <div className="container mx-auto flex flex-wrap items-center justify-between">
-        <nav className="text-xl font-bold text-gray-800 mb-4 sm:mb-0">
-          <Link href="/">Rafif Portfolio</Link>
-        </nav>
+    <header className="bg-white shadow-md p-4 w-full sticky top-0 z-50">
+      <div className="container mx-auto flex items-center justify-between">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="text-xl font-bold text-cyan-600 hover:text-cyan-800 transition"
+        >
+          Rafif Portfolio
+        </Link>
 
-        <nav className="w-full md:w-auto">
-          <ul className="flex flex-col items-center md:flex-row gap-4 text-black p-0">
+        {/* Nav Links */}
+        <nav>
+          <ul className="flex flex-row gap-6 text-sm font-medium">
             <li>
-              <Link className="font-medium text-cyan-600" href="/#about-me">
-                About me
+              <Link
+                href="/#about-me"
+                className="text-gray-600 hover:text-cyan-600 transition"
+              >
+                About Me
               </Link>
             </li>
             <li>
-              <Link className="font-medium text-cyan-600" href="/#skill">
-                Skill
+              <Link
+                href="/#skill"
+                className="text-gray-600 hover:text-cyan-600 transition"
+              >
+                Skills
               </Link>
             </li>
             <li>
-              <Link className="font-medium text-cyan-600" href="/#portofolio">
+              <Link
+                href="/#portofolio"
+                className="text-gray-600 hover:text-cyan-600 transition"
+              >
                 Portfolio
               </Link>
             </li>
             <li>
-              <Link className="font-medium text-cyan-600" href="/#experience">
+              <Link
+                href="/#experience"
+                className="bg-cyan-600 px-4 py-2 rounded-full hover:text-cyan-600 transition"
+              >
                 Experience
-              </Link>
-            </li>
-            <li>
-              <Link className="font-medium text-cyan-600" href="/#contact-me">
-                Contact
               </Link>
             </li>
           </ul>
