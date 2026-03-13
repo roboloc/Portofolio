@@ -25,9 +25,10 @@ export default function AboutMe() {
             A Master&apos;s student in Computer Science at UCD with strong
             skills in programming for web development using React and
             Express.js. Also, strong skills in programming for machine learning.
-            Work as a Quality Assurance with manual testing and automated
-            testing for an internship. With an eagerness to learn new things,
-            always delivers the best, and possesses good teamwork skills.
+            Work Experience as a Quality Assurance with manual testing and
+            automated testing for an internship. With an eagerness to learn new
+            things, always delivers the best, and possesses good teamwork
+            skills.
           </p>
 
           <div className="mt-6 flex space-x-4">
