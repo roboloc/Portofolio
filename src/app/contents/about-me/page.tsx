@@ -22,13 +22,12 @@ export default function AboutMe() {
             About Me
           </p>
           <p className="text-black text-base sm:text-lg lg:text-xl leading-relaxed max-w-prose mb-6">
-            A Master&apos;s student in Computer Science at UCD with strong
-            skills in programming for web development using React and
-            Express.js. Also, strong skills in programming for machine learning.
-            Work Experience as a Quality Assurance with manual testing and
-            automated testing for an internship. With an eagerness to learn new
-            things, always delivers the best, and possesses good teamwork
-            skills.
+            I am a Master&apos;s student in Computer Science at UCD. I have
+            experience in web development using React and Express.js, and
+            machine learning. I also completed an internship as a Quality
+            Assurance engineer where I worked on both manual and automated
+            testing. I enjoy learning new things and always give my best in
+            everything I do.
           </p>
 
           <div className="mt-6 flex space-x-4">
