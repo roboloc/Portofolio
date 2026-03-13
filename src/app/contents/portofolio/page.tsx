@@ -24,7 +24,7 @@ export default function Portfolio() {
     },
     {
       id: 3,
-      title: "Task Management App",
+      title: "House Price Range Clustering",
       longExplanation:
         "A Python project that uses machine learning clustering to group house prices into three ranges: 100jt–16m, 16.1m–32m, and 32.1m–48m. The project uses Pandas for data processing and  clustering algorithms to categorize houses based on their price. The results are visualized using bar charts that show the number of houses in each price range across different areas in Jakarta (Daerah).",
       imageUrl:
