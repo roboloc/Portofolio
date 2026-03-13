@@ -5,7 +5,7 @@ export default function Header() {
     <header className="bg-cyan-50 shadow-sm p-4 w-full sticky top-0 z-50">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <nav className="text-xl font-bold text-gray-800 mb-4 sm:mb-0">
-          <Link href="/">Ismail Portfolio</Link>
+          <Link href="/">Rafif Portfolio</Link>
         </nav>
 
         <nav className="w-full md:w-auto">
