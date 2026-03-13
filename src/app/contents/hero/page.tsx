@@ -9,7 +9,7 @@ export default function Hero() {
         {/* Text Section */}
         <div className="flex flex-col justify-center text-center md:text-left order-2 md:order-1">
           <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-800 leading-tight">
-            I'm Rafif Krishna Ismail
+            I&apos;m Rafifki Krishna Ismail
           </p>
           <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-cyan-700 mt-2">
             Software Engineer

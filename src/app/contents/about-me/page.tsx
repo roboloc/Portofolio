@@ -22,7 +22,7 @@ export default function AboutMe() {
             About Me
           </p>
           <p className="text-black text-base sm:text-lg lg:text-xl leading-relaxed max-w-prose mb-6">
-            A Master's student in Computer Science with strong skills in
+            A Master&apos;s student in Computer Science with strong skills in
             programming for web development using React and Express.js. Also,
             strong skills in programming for machine learning. Work as a Quality
             Assurance with manual testing and automated testing for an
