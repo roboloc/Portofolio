@@ -1,35 +1,540 @@
+/* ============================================================
+   globals.css — Portfolio Design Refinement
+   Tailwind v4 syntax (@theme, not tailwind.config.ts)
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
+/* ============================================================
+   SECTION A — DESIGN TOKENS
+   These define your brand colours as Tailwind utility classes.
+   After this you can use: bg-brand-bg, text-brand-heading, etc.
+   ============================================================ */
 @theme {
+  /* Existing fonts — kept as-is */
   --color-light-grayish-blue: hsl(210, 46%, 95%);
   --font-roboto: "Roboto", sans-serif;
   --font-roboto-mono: "Roboto Mono", sans-serif;
   --font-bebas-neue: "Bebas Neue", sans-serif;
+
+  /* NEW — Brand colour palette */
+  --color-brand-bg: #ecfeff; /* page background     → bg-brand-bg      */
+  --color-brand-card: #ffffff; /* card surfaces       → bg-brand-card     */
+  --color-brand-primary: #0891b2; /* buttons, links      → bg-brand-primary  */
+  --color-brand-primary-dark: #0e7490; /* hover state      → bg-brand-primary-dark */
+  --color-brand-accent: #67e8f9; /* decorative shapes   → bg-brand-accent   */
+  --color-brand-heading: #172b3a; /* h1 h2 h3            → text-brand-heading */
+  --color-brand-body: #475569; /* paragraphs          → text-brand-body   */
+
+  /* NEW — Shadow & border tokens */
+  --shadow-card: 0 2px 12px 0 rgba(23, 43, 58, 0.08);
+  --shadow-hover: 0 6px 24px 0 rgba(8, 145, 178, 0.14);
+  --border-brand: rgba(8, 145, 178, 0.12);
+
+  /* NEW — Radius tokens */
+  --radius-card: 1rem;
+  --radius-btn: 0.5rem;
 }
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================================
+   SECTION B — BASE STYLES
+   Sets the page background, default text, and font.
+   ============================================================ */
+@layer base {
+  html,
+  body {
+    background-color: #ecfeff;
+    color: #475569;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #172b3a;
+    font-weight: 700;
+    line-height: 1.2;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  p {
+    color: #475569;
+    line-height: 1.75;
+  }
+
+  /* Section divider lines */
+  hr {
+    border-color: rgba(8, 145, 178, 0.12);
+    border-top-width: 1px;
+    margin: 0.5rem 0 1.5rem;
+  }
+
+  a {
+    color: #0891b2;
+    text-decoration: none;
+    transition: color 200ms ease;
+  }
+
+  a:hover {
+    color: #0e7490;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+/* ============================================================
+   SECTION C — NAVBAR
+   White bar, cyan active link, smooth hover.
+   ============================================================ */
+@layer components {
+  .navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(8, 145, 178, 0.12);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .nav-link {
+    color: #172b3a;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.4rem;
+    transition:
+      color 200ms ease,
+      background-color 200ms ease;
+  }
+
+  .nav-link:hover {
+    color: #0891b2;
+    background-color: rgba(8, 145, 178, 0.06);
+  }
+
+  .nav-link.active {
+    color: #0891b2;
+    font-weight: 600;
+  }
+
+  .nav-logo {
+    color: #172b3a;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* ============================================================
+   SECTION D — HERO SECTION
+   Light cyan background, white info card, cyan portrait border.
+   ============================================================ */
+@layer components {
+  .hero-section {
+    background-color: #ecfeff;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+
+  /* White card that wraps name + role + text */
+  .hero-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(8, 145, 178, 0.12);
+    border-radius: 1.25rem;
+    box-shadow: 0 2px 12px 0 rgba(23, 43, 58, 0.08);
+    padding: 2.5rem;
+  }
+
+  .hero-name {
+    color: #172b3a;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .hero-role {
+    color: #0891b2;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 0.4rem;
+  }
+
+  /* Cyan decorative rectangles */
+  .hero-decor {
+    background-color: #67e8f9;
+    border-radius: 0.25rem;
+    opacity: 0.75;
+  }
+
+  /* Portrait photo */
+  .hero-portrait {
+    border-radius: 1.25rem;
+    border: 3px solid #67e8f9;
+    box-shadow: 0 6px 24px 0 rgba(8, 145, 178, 0.14);
+    object-fit: cover;
+  }
+
+  /* Social icon links */
+  .hero-social a {
+    display: inline-flex;
+    opacity: 0.7;
+    transition:
+      opacity 200ms ease,
+      transform 200ms ease;
+  }
+
+  .hero-social a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+/* ============================================================
+   SECTION E — ABOUT ME SECTION
+   Clean layout, subtle image shadow.
+   ============================================================ */
+@layer components {
+  .about-section {
+    background-color: #ecfeff;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .about-image {
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px 0 rgba(23, 43, 58, 0.08);
+    border: 1px solid rgba(8, 145, 178, 0.12);
+  }
+
+  .about-text {
+    color: #475569;
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 60ch;
+  }
+}
+
+/* ============================================================
+   SECTION F — SKILLS SECTION
+   White cards, dark text, cyan hover border.
+   ============================================================ */
+@layer components {
+  .skills-section {
+    background-color: #ecfeff;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .skill-category-label {
+    color: #0891b2;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(8, 145, 178, 0.12);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 12px 0 rgba(23, 43, 58, 0.08);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition:
+      box-shadow 200ms ease,
+      border-color 200ms ease,
+      transform 200ms ease;
+  }
+
+  .skill-card:hover {
+    box-shadow: 0 6px 24px 0 rgba(8, 145, 178, 0.14);
+    border-color: #67e8f9;
+    transform: translateY(-2px);
+  }
+
+  .skill-name {
+    color: #172b3a;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  /* Slider arrows */
+  .skill-arrow-btn {
+    background-color: #ffffff;
+    border: 1px solid rgba(8, 145, 178, 0.2);
+    color: #0891b2;
+    border-radius: 9999px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
+  }
+
+  .skill-arrow-btn:hover {
+    background-color: #0891b2;
+    color: #ffffff;
+  }
+}
+
+/* ============================================================
+   SECTION G — PROJECTS / PORTFOLIO SECTION
+   White cards, 16:9 image, cyan action links.
+   ============================================================ */
+@layer components {
+  .projects-section {
+    background-color: #ecfeff;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .project-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(8, 145, 178, 0.12);
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px 0 rgba(23, 43, 58, 0.08);
+    overflow: hidden;
+    transition:
+      box-shadow 200ms ease,
+      transform 200ms ease;
+  }
+
+  .project-card:hover {
+    box-shadow: 0 6px 24px 0 rgba(8, 145, 178, 0.14);
+    transform: translateY(-3px);
+  }
+
+  .project-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+
+  .project-card-body {
+    padding: 1.25rem;
+  }
+
+  .project-title {
+    color: #172b3a;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  .project-desc {
+    color: #475569;
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  /* Pagination */
+  .pagination-btn {
+    color: #0891b2;
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.4rem;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
+  }
+
+  .pagination-btn:hover {
+    background-color: #ecfeff;
+    color: #0e7490;
+  }
+
+  .pagination-btn.active {
+    background-color: #0891b2;
+    color: #ffffff;
+  }
+}
+
+/* ============================================================
+   SECTION H — EXPERIENCE SECTION
+   White cards, company in cyan, clean bullet list.
+   ============================================================ */
+@layer components {
+  .experience-section {
+    background-color: #ecfeff;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .experience-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(8, 145, 178, 0.12);
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px 0 rgba(23, 43, 58, 0.08);
+    padding: 1.75rem;
+  }
+
+  .exp-job-title {
+    color: #172b3a;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+
+  .exp-company {
+    color: #0891b2;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .exp-meta {
+    color: #475569;
+    font-size: 0.82rem;
+    margin-top: 0.1rem;
+  }
+
+  .exp-bullets {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-left: 1.25rem;
+    list-style-type: disc;
+  }
+
+  .exp-bullets li {
+    color: #475569;
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+
+  .exp-logo {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.85;
+  }
+}
+
+/* ============================================================
+   SECTION I — FOOTER
+   ============================================================ */
+@layer components {
+  .footer {
+    background-color: #ffffff;
+    border-top: 1px solid rgba(8, 145, 178, 0.12);
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+
+  .footer p {
+    color: #475569;
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================================
+   SECTION J — BUTTON SYSTEM
+   Use class="btn-primary" or "btn-secondary" on any <button> or <a>
+   ============================================================ */
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #0891b2;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.65rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+      background-color 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #0e7490;
+    box-shadow: 0 6px 24px 0 rgba(8, 145, 178, 0.25);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #ffffff;
+    color: #0891b2;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.65rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 1.5px solid #0891b2;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: #0891b2;
+    color: #ffffff;
+  }
+}
+
+/* ============================================================
+   SECTION K — SECTION HEADING UTILITY
+   Usage: <div class="section-heading"><h2>Title</h2></div>
+   ============================================================ */
+@layer components {
+  .section-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-heading h2 {
+    color: #172b3a;
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+
+  .section-heading-bar {
+    display: block;
+    width: 3rem;
+    height: 3px;
+    background-color: #0891b2;
+    border-radius: 9999px;
+    margin-top: 0.4rem;
+  }
+}
+
+/* ============================================================
+   SECTION L — RESPONSIVE
+   ============================================================ */
+@layer utilities {
+  @media (max-width: 768px) {
+    .hero-section {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+      min-height: auto;
+    }
+
+    .hero-card {
+      padding: 1.5rem;
+    }
+
+    .hero-name {
+      font-size: 2rem;
+    }
+  }
+}
