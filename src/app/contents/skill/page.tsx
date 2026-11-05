@@ -10,7 +10,7 @@ const categories = [
         icon: "https://cdn.simpleicons.org/typescript/black",
       },
       { name: "SQL", icon: "https://cdn.simpleicons.org/postgresql/black" },
-      { name: "Tableau", icon: "/tableau.png" },
+      { name: "Tableau", icon: "/Tableau.png" },
       { name: "React", icon: "https://cdn.simpleicons.org/react/black" },
       { name: "Express.js", icon: "https://cdn.simpleicons.org/express/black" },
     ],
@@ -23,9 +23,9 @@ const categories = [
       { name: "GitLab", icon: "https://cdn.simpleicons.org/gitlab/black" },
       {
         name: "Playwright",
-        icon: "/playwright.png", // drop playwright.png in /public
+        icon: "/Playwright.png", // drop playwright.png in /public
       },
-      { name: "Katalon", icon: "/katalon.png" }, // drop katalon.png in /public
+      { name: "Katalon", icon: "/Katalon.png" }, // drop katalon.png in /public
     ],
   },
 ];
