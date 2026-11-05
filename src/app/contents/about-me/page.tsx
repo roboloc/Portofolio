@@ -20,7 +20,7 @@ export default function AboutMe() {
               About Me
             </p>
             <p
-              className="text-black text-justify [hyphens:auto] sm:text-lg lg:text-xl leading-relaxed max-w-prose mb-6"
+              className="text-black text-justify [hyphens:auto] sm:text-base lg:text-lg leading-relaxed max-w-prose mb-6"
               lang="en"
             >
               MSc Computer Science graduate from UCD, with hands-on experience
