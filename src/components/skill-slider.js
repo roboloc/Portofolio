@@ -1,52 +1,49 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 
-function SkillSlider({ skills }) {
-  const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
+export default function SkillSlider({ skills }) {
+  const [current, setCurrent] = useState(0);
 
-  const goToNextSkill = () => {
-    setCurrentSkillIndex((prevIndex) =>
-      prevIndex === skills.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+  const prev = () => setCurrent((i) => (i === 0 ? skills.length - 1 : i - 1));
+  const next = () => setCurrent((i) => (i === skills.length - 1 ? 0 : i + 1));
 
-  const goToPreviousSkill = () => {
-    setCurrentSkillIndex((prevIndex) =>
-      prevIndex === 0 ? skills.length - 1 : prevIndex - 1
-    );
-  };
+  const skill = skills[current];
 
   return (
-    <div className="flex flex-col items-center relative">
-      <div
-        className="bg-black w-32 h-32 rounded-3xl overflow-hidden
-        relative flex items-center justify-center text-white text-xl font-bold text-center p-2
-        transition-all duration-500 ease-in-out transform hover:scale-105"
-      >
-        {skills[currentSkillIndex]}
-      </div>
-      <div className="h-10 w-24 bg-gradient-to-l from-[#118B50] relative -mt-4 z-10 rounded-b-lg"></div>
-      <p className="text-center mt-2 font-semibold text-gray-700">
-        {skills[currentSkillIndex]}
-      </p>
-      <div className="absolute inset-x-0 bottom-0 top-0 flex items-center justify-between p-2">
-        <button
-          onClick={goToPreviousSkill}
-          className="bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75"
-          aria-label="Previous skill"
-        >
-          &larr;
-        </button>
-        <button
-          onClick={goToNextSkill}
-          className="bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75"
-          aria-label="Next skill"
-        >
-          &rarr;
-        </button>
+    // pb-3 pr-3 gives the absolute box room to show without being clipped
+    <div className="relative w-full max-w-xs pb-3 pr-3">
+      <div className="absolute -bottom-0 -right-0 w-full h-full rounded-2xl bg-cyan-300 opacity-70" />
+
+      <div className="relative bg-[#FFFDF6] rounded-2xl shadow-lg p-6 flex flex-col items-center justify-center gap-3 z-10 min-h-[140px]">
+        {skill.icon && (
+          <img
+            src={skill.icon}
+            alt={skill.name}
+            className="w-12 h-12 object-contain"
+            // style={
+            //   skill.icon.startsWith("http")
+            //     ? { filter: "brightness(0) invert(1)" }
+            //     : {}
+            // }
+          />
+        )}
+        <p className="text-black font-bold text-lg">{skill.name}</p>
+
+        <div className="flex gap-6 mt-1">
+          <button
+            onClick={prev}
+            className="text-black hover:text-cyan-200 transition-colors text-xl"
+          >
+            ←
+          </button>
+          <button
+            onClick={next}
+            className="text-black hover:text-cyan-200 transition-colors text-xl"
+          >
+            →
+          </button>
+        </div>
       </div>
     </div>
   );
 }
-
-export default SkillSlider;
