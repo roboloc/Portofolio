@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function AboutMe() {
   const imageUrl = {
-    gmail: "https://cdn.simpleicons.org/gmail/EA4335",
-    linkedin: "https://cdn.simpleicons.org/linkedin/0A66C2",
-    github: "https://cdn.simpleicons.org/github/181717",
+    gmail: "/gmail.png",
+    linkedin: "/linkedin.png",
+    github: "/github.png",
   };
   return (
     <main
@@ -50,7 +50,7 @@ export default function AboutMe() {
                 <span
                   key={link.alt}
                   className="w-10 h-10 rounded-full border-2 border-black inline-flex items-center justify-center
-                  bg-amber-300 relative overflow-hidden flex-shrink-0 shadow-md transform transition-transform duration-200 hover:scale-105"
+                  bg-[#FFFDF6] relative overflow-hidden flex-shrink-0 shadow-md transform transition-transform duration-200 hover:scale-105"
                 >
                   <a href={link.href} target="_blank" rel="noopener noreferrer">
                     <Image
