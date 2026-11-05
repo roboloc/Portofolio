@@ -2,11 +2,9 @@ import Image from "next/image";
 
 export default function AboutMe() {
   const imageUrl = {
-    gmail: "https://logowik.com/content/uploads/images/gmail-new-icon5198.jpg",
-    linkedin:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png",
-    github:
-      "https://static.vecteezy.com/system/resources/previews/016/833/872/non_2x/github-logo-git-hub-icon-on-white-background-free-vector.jpg",
+    gmail: "https://cdn.simpleicons.org/gmail/EA4335",
+    linkedin: "https://cdn.simpleicons.org/linkedin/0A66C2",
+    github: "https://cdn.simpleicons.org/github/181717",
   };
   return (
     <main
