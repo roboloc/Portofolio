@@ -12,7 +12,7 @@ export default function Hero() {
           <div className="absolute -bottom-0 -left-0 w-full h-full rounded-3xl bg-cyan-300 opacity-60" />
 
           <div
-            className="relative bg-cyan-100 rounded-3xl shadow-lg 
+            className="relative bg-white rounded-3xl shadow-lg 
                           px-5 py-7 sm:px-8 sm:py-9 lg:px-10 lg:py-10
                           z-10 flex flex-col justify-center text-left"
           >
